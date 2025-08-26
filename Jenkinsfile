@@ -43,7 +43,7 @@ pipeline {
             steps {
                 script {
                     // Replace with your EC2's public IP
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@<EC2_PUBLIC_IP> 'docker pull $DOCKER_IMAGE:$DOCKER_TAG && docker stop nodejs || true && docker rm nodejs || true && docker run -d --name nodejs -p 3000:3000 $DOCKER_IMAGE:$DOCKER_TAG'"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@44.204.230.24 'docker pull $DOCKER_IMAGE:$DOCKER_TAG && docker stop nodejs || true && docker rm nodejs || true && docker run -d --name nodejs -p 3000:3000 $DOCKER_IMAGE:$DOCKER_TAG'"
                 }
             }
         }
