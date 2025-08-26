@@ -1,12 +1,12 @@
 # Step 1: Use Node,js official image
-FROM node:20
+FROM node:18-alpine
 
 # Step 2: Set workin Director in container
 WORKDIR /app
 
 # Step 3: copy package.json and install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --production
 
 # Step 4: Copy all files to the container
 COPY . .
